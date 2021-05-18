@@ -1,0 +1,5 @@
+C:\Users\julia\CAI\repositorios\VentaRespuestos_Forms\VentaRespuestosConsole\VentaRespuestosEntidades\bin\Debug\VentaRespuestosEntidades.dll
+C:\Users\julia\CAI\repositorios\VentaRespuestos_Forms\VentaRespuestosConsole\VentaRespuestosEntidades\bin\Debug\VentaRespuestosEntidades.pdb
+C:\Users\julia\CAI\repositorios\VentaRespuestos_Forms\VentaRespuestosConsole\VentaRespuestosEntidades\obj\Debug\VentaRespuestosEntidades.csproj.CoreCompileInputs.cache
+C:\Users\julia\CAI\repositorios\VentaRespuestos_Forms\VentaRespuestosConsole\VentaRespuestosEntidades\obj\Debug\VentaRespuestosEntidades.dll
+C:\Users\julia\CAI\repositorios\VentaRespuestos_Forms\VentaRespuestosConsole\VentaRespuestosEntidades\obj\Debug\VentaRespuestosEntidades.pdb

@@ -1,0 +1,13 @@
+C:\Users\julia\CAI\repositorios\VentaRespuestos_Forms\VentaRespuestosConsole\VentaRespuestosController\bin\Debug\VentaRespuestosController.dll
+C:\Users\julia\CAI\repositorios\VentaRespuestos_Forms\VentaRespuestosConsole\VentaRespuestosController\bin\Debug\VentaRespuestosController.pdb
+C:\Users\julia\CAI\repositorios\VentaRespuestos_Forms\VentaRespuestosConsole\VentaRespuestosController\bin\Debug\VentaRespuestosEntidades.dll
+C:\Users\julia\CAI\repositorios\VentaRespuestos_Forms\VentaRespuestosConsole\VentaRespuestosController\bin\Debug\VentaRespuestosService.dll
+C:\Users\julia\CAI\repositorios\VentaRespuestos_Forms\VentaRespuestosConsole\VentaRespuestosController\bin\Debug\VentaRespuestosDatos.dll
+C:\Users\julia\CAI\repositorios\VentaRespuestos_Forms\VentaRespuestosConsole\VentaRespuestosController\bin\Debug\VentaRespuestosEntidades.pdb
+C:\Users\julia\CAI\repositorios\VentaRespuestos_Forms\VentaRespuestosConsole\VentaRespuestosController\bin\Debug\VentaRespuestosService.pdb
+C:\Users\julia\CAI\repositorios\VentaRespuestos_Forms\VentaRespuestosConsole\VentaRespuestosController\bin\Debug\VentaRespuestosDatos.pdb
+C:\Users\julia\CAI\repositorios\VentaRespuestos_Forms\VentaRespuestosConsole\VentaRespuestosController\obj\Debug\VentaRespuestosController.csprojAssemblyReference.cache
+C:\Users\julia\CAI\repositorios\VentaRespuestos_Forms\VentaRespuestosConsole\VentaRespuestosController\obj\Debug\VentaRespuestosController.csproj.CoreCompileInputs.cache
+C:\Users\julia\CAI\repositorios\VentaRespuestos_Forms\VentaRespuestosConsole\VentaRespuestosController\obj\Debug\VentaRespuestosController.csproj.CopyComplete
+C:\Users\julia\CAI\repositorios\VentaRespuestos_Forms\VentaRespuestosConsole\VentaRespuestosController\obj\Debug\VentaRespuestosController.dll
+C:\Users\julia\CAI\repositorios\VentaRespuestos_Forms\VentaRespuestosConsole\VentaRespuestosController\obj\Debug\VentaRespuestosController.pdb
