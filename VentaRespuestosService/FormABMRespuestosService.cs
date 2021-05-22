@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VentaRespuestosDatos;
+using VentaRespuestosEntidades.exceptio_ns;
 using VentaRespuestosEntidades.Helper;
 
 namespace VentaRespuestosService
@@ -14,5 +15,7 @@ namespace VentaRespuestosService
         {
             return FormABMRespuestosDatos.GetListaCategorias();
         }
+
+        
     }
 }

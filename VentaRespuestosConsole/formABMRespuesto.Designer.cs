@@ -40,14 +40,15 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtStock = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.agregarRepuesto = new System.Windows.Forms.Button();
+            this.modificarPrecio = new System.Windows.Forms.Button();
+            this.quitarRepuesto = new System.Windows.Forms.Button();
+            this.agregarStock = new System.Windows.Forms.Button();
             this.btnVolver2 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.quitarStock = new System.Windows.Forms.Button();
             this.btnMostrarListaCat = new System.Windows.Forms.Button();
             this.lblFiltro = new System.Windows.Forms.Label();
+            this.actualizar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelBienvenida
@@ -152,43 +153,45 @@
             this.txtStock.Size = new System.Drawing.Size(100, 20);
             this.txtStock.TabIndex = 12;
             // 
-            // button1
+            // agregarRepuesto
             // 
-            this.button1.Location = new System.Drawing.Point(333, 221);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "agregarRepuesto";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.agregarRepuesto.Location = new System.Drawing.Point(333, 221);
+            this.agregarRepuesto.Name = "agregarRepuesto";
+            this.agregarRepuesto.Size = new System.Drawing.Size(106, 23);
+            this.agregarRepuesto.TabIndex = 13;
+            this.agregarRepuesto.Text = "agregarRepuesto";
+            this.agregarRepuesto.UseVisualStyleBackColor = true;
+            this.agregarRepuesto.Click += new System.EventHandler(this.agregarRepuesto_Click);
             // 
-            // button2
+            // modificarPrecio
             // 
-            this.button2.Location = new System.Drawing.Point(457, 221);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 23);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "modificarPrecio";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.modificarPrecio.Location = new System.Drawing.Point(457, 221);
+            this.modificarPrecio.Name = "modificarPrecio";
+            this.modificarPrecio.Size = new System.Drawing.Size(100, 23);
+            this.modificarPrecio.TabIndex = 14;
+            this.modificarPrecio.Text = "modificarPrecio";
+            this.modificarPrecio.UseVisualStyleBackColor = true;
+            this.modificarPrecio.Click += new System.EventHandler(this.modificarPrecio_Click);
             // 
-            // button3
+            // quitarRepuesto
             // 
-            this.button3.Location = new System.Drawing.Point(583, 221);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(93, 23);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "quitarRespuesto";
-            this.button3.UseVisualStyleBackColor = true;
+            this.quitarRepuesto.Location = new System.Drawing.Point(583, 221);
+            this.quitarRepuesto.Name = "quitarRepuesto";
+            this.quitarRepuesto.Size = new System.Drawing.Size(93, 23);
+            this.quitarRepuesto.TabIndex = 15;
+            this.quitarRepuesto.Text = "quitarRespuesto";
+            this.quitarRepuesto.UseVisualStyleBackColor = true;
+            this.quitarRepuesto.Click += new System.EventHandler(this.quitarRepuesto_Click);
             // 
-            // button4
+            // agregarStock
             // 
-            this.button4.Location = new System.Drawing.Point(345, 279);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "agregarStock";
-            this.button4.UseVisualStyleBackColor = true;
+            this.agregarStock.Location = new System.Drawing.Point(345, 279);
+            this.agregarStock.Name = "agregarStock";
+            this.agregarStock.Size = new System.Drawing.Size(75, 23);
+            this.agregarStock.TabIndex = 16;
+            this.agregarStock.Text = "agregarStock";
+            this.agregarStock.UseVisualStyleBackColor = true;
+            this.agregarStock.Click += new System.EventHandler(this.agregarStock_Click);
             // 
             // btnVolver2
             // 
@@ -200,14 +203,15 @@
             this.btnVolver2.UseVisualStyleBackColor = true;
             this.btnVolver2.Click += new System.EventHandler(this.btnVolver2_Click);
             // 
-            // button6
+            // quitarStock
             // 
-            this.button6.Location = new System.Drawing.Point(457, 279);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 19;
-            this.button6.Text = "quitarStock";
-            this.button6.UseVisualStyleBackColor = true;
+            this.quitarStock.Location = new System.Drawing.Point(457, 279);
+            this.quitarStock.Name = "quitarStock";
+            this.quitarStock.Size = new System.Drawing.Size(75, 23);
+            this.quitarStock.TabIndex = 19;
+            this.quitarStock.Text = "quitarStock";
+            this.quitarStock.UseVisualStyleBackColor = true;
+            this.quitarStock.Click += new System.EventHandler(this.quitarStock_Click);
             // 
             // btnMostrarListaCat
             // 
@@ -229,19 +233,30 @@
             this.lblFiltro.Text = "label6";
             this.lblFiltro.Click += new System.EventHandler(this.lblFiltro_Click);
             // 
+            // actualizar
+            // 
+            this.actualizar.Location = new System.Drawing.Point(201, 376);
+            this.actualizar.Name = "actualizar";
+            this.actualizar.Size = new System.Drawing.Size(75, 23);
+            this.actualizar.TabIndex = 22;
+            this.actualizar.Text = "Actualizar";
+            this.actualizar.UseVisualStyleBackColor = true;
+            this.actualizar.Click += new System.EventHandler(this.actualizar_Click);
+            // 
             // VentaRespuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.actualizar);
             this.Controls.Add(this.lblFiltro);
             this.Controls.Add(this.btnMostrarListaCat);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.quitarStock);
             this.Controls.Add(this.btnVolver2);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.agregarStock);
+            this.Controls.Add(this.quitarRepuesto);
+            this.Controls.Add(this.modificarPrecio);
+            this.Controls.Add(this.agregarRepuesto);
             this.Controls.Add(this.txtStock);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtName);
@@ -276,13 +291,14 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox txtStock;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button agregarRepuesto;
+        private System.Windows.Forms.Button modificarPrecio;
+        private System.Windows.Forms.Button quitarRepuesto;
+        private System.Windows.Forms.Button agregarStock;
         private System.Windows.Forms.Button btnVolver2;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button quitarStock;
         private System.Windows.Forms.Button btnMostrarListaCat;
         private System.Windows.Forms.Label lblFiltro;
+        private System.Windows.Forms.Button actualizar;
     }
 }

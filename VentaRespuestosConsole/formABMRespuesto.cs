@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VentaRespuestosController;
 using VentaRespuestosEntidades.entidades;
+using VentaRespuestosEntidades.exceptio_ns;
 
 namespace VentaRespuestosConsole
 {
@@ -54,6 +55,7 @@ namespace VentaRespuestosConsole
             limpiar();
             this.labelBienvenida.Text = getMensajeBienvenida();
             this.lblFiltro.Text = getMensajeFiltro();
+            listRepuestos.Text = "Elige un filtro";
         }
 
         private String getMensajeBienvenida()
@@ -62,7 +64,8 @@ namespace VentaRespuestosConsole
             if (this._nombreComercio.ToString() == "1")
             {
                 nombreComercioVar = "Juli Repuestos S.A";
-            } else
+            }
+            else
             {
                 nombreComercioVar = "Mati Repuestos S.A";
             }
@@ -82,7 +85,8 @@ namespace VentaRespuestosConsole
             this.cmbCategoria.ValueMember = "Codigo";
         }
 
-        private void limpiar() {
+        private void limpiar()
+        {
             this.cmbCategoria.SelectedIndex = 0;
         }
 
@@ -122,11 +126,13 @@ namespace VentaRespuestosConsole
             if (this.cmbCategoria.SelectedIndex == 0)
             {
                 MessageBox.Show("Por favor seleccione una categoria");
-            } else if(this.cmbCategoria.SelectedIndex == 1)
+            }
+            else if (this.cmbCategoria.SelectedIndex == 1)
             {
                 List<Respuesto> listaRepuestoAutos = listaProductos.Where(l => l.Categoria.Codigo == this.categoriaAuto.Codigo).ToList();
                 listRepuestos.DataSource = listaRepuestoAutos;
-            }  else if (this.cmbCategoria.SelectedIndex == 2)
+            }
+            else if (this.cmbCategoria.SelectedIndex == 2)
             {
                 List<Respuesto> listaRepuestoCasas = listaProductos.Where(l => l.Categoria.Codigo == this.categoriaCasa.Codigo).ToList();
                 listRepuestos.DataSource = listaRepuestoCasas;
@@ -138,7 +144,7 @@ namespace VentaRespuestosConsole
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void agregarRepuesto_Click(object sender, EventArgs e)
         {
             try
             {
@@ -163,16 +169,16 @@ namespace VentaRespuestosConsole
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }           
+            }
         }
 
-      public void validar()
+        public void validar()
         {
             if (this.cmbCategoria.SelectedIndex == 0)
             {
                 MessageBox.Show("Por favor seleccione una categoria");
             }
-            if (txtCodigo==null || txtName==null || txtPrecio==null || txtStock == null)
+            if (txtCodigo == null || txtName == null || txtPrecio == null || txtStock == null)
             {
                 throw new Exception("Parametros invalidos, intente nuevamente");
             }
@@ -180,26 +186,121 @@ namespace VentaRespuestosConsole
 
         private void listRepuestos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(listRepuestos.SelectedIndex==0 || listRepuestos.SelectedIndex == null)
+            try
             {
-                MessageBox.Show("Por favor parate en algun registro");
+                if (listRepuestos.SelectedIndex == null)
+                {
+                    throw new Exception("Por favor parese en algun lado");
+                }
+                Respuesto respuesto = (Respuesto)listRepuestos.SelectedValue;
+                if (respuesto == null)
+                {
+                    throw new Exception("Repuesto vacio");
+                }
+                txtName.Text = respuesto.Nombre;
+                txtCodigo.Text = respuesto.Codigo.ToString();
+                txtPrecio.Text = respuesto.Precio.ToString();
+                txtStock.Text = respuesto.Stock.ToString();
             }
-            Respuesto respuesto = (Respuesto)listRepuestos.SelectedValue;
-            txtName.Text = respuesto.Nombre;
-            txtCodigo.Text = respuesto.Codigo.ToString();
-            txtPrecio.Text = respuesto.Precio.ToString();
-            txtStock.Text = respuesto.Stock.ToString();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void modificarPrecio_Click(object sender, EventArgs e)
         {
-            if (txtPrecio.Text == null || txtCodigo == null) {
+            if (txtPrecio.Text == null || txtCodigo == null)
+            {
                 MessageBox.Show("valores nulo, intente nuevamente");
             }
-        
+
             listaProductos.Where(l => l.Codigo == int.Parse(txtCodigo.Text)).ToList().ForEach(l => l.Precio = double.Parse(txtPrecio.Text));
-          
+
+        }
+
+        private void quitarRepuesto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                validar();
+
+                if (int.Parse(txtStock.Text) <= 0)
+                {
+                    throw new StockLessTanZeroException("El stock es menor q cero");
+                }
+
+                Respuesto respuestoAEliminar = listaProductos.FirstOrDefault(l => l.Codigo == int.Parse(txtCodigo.Text));
+                if (respuestoAEliminar == null)
+                {
+                    throw new Exception("Cliente no existente");
+                }
+                listaProductos.Remove(respuestoAEliminar);
+                listRepuestos.DataSource = null;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void agregarStock_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                validar();
+
+                Respuesto respuestoAEliminar = listaProductos.FirstOrDefault(l => l.Codigo == int.Parse(txtCodigo.Text));
+                respuestoAEliminar.Stock = int.Parse(txtStock.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+               
+            }
+        }
+
+        private void quitarStock_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                validar();
+
+                Respuesto respuestoAEliminarStock = listaProductos.FirstOrDefault(l => l.Codigo == int.Parse(txtCodigo.Text));
+                respuestoAEliminarStock.Stock = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                
+            }
+        }
+
+        private void actualizar_Click(object sender, EventArgs e)
+        {
+            if (this.cmbCategoria.SelectedIndex == 0)
+            {
+                MessageBox.Show("Por favor seleccione una categoria");
+            }
+            else if (this.cmbCategoria.SelectedIndex == 1)
+            {
+                List<Respuesto> listaRepuestoAutos = listaProductos.Where(l => l.Categoria.Codigo == this.categoriaAuto.Codigo).ToList();
+                listRepuestos.DataSource = listaRepuestoAutos;
+            }
+            else if (this.cmbCategoria.SelectedIndex == 2)
+            {
+                List<Respuesto> listaRepuestoCasas = listaProductos.Where(l => l.Categoria.Codigo == this.categoriaCasa.Codigo).ToList();
+                listRepuestos.DataSource = listaRepuestoCasas;
+            }
+            else if (this.cmbCategoria.SelectedIndex == 3)
+            {
+                List<Respuesto> listaRepuestoLimpieza = listaProductos.Where(l => l.Categoria.Codigo == this.categoriaLimpieza.Codigo).ToList();
+                listRepuestos.DataSource = listaRepuestoLimpieza;
+            }
+
         }
     }
 }

@@ -46,6 +46,7 @@
     <Compile Include="entidades\Respuesto.cs" />
     <Compile Include="entidades\VentaRepuestos.cs" />
     <Compile Include="exceptio ns\ComercioNotFoundException.cs" />
+    <Compile Include="exceptio ns\StockLessTanZeroException.cs" />
     <Compile Include="Helper\CategoriaHelper.cs" />
     <Compile Include="Helper\CodigoDescripcion.cs" />
     <Compile Include="Helper\DireccionHelper.cs" />
